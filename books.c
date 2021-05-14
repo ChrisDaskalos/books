@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#define MAXTITLE 40
-#define MAXAUTHOR 40
-#define MAXBOOKS 100
+#define MAXTITLE 40				//maximum capacity of chars within the title
+#define MAXAUTHOR 40				//maximum capacity of chars within the author
+#define MAXBOOKS 100				//capacity for 100 books 
 char *s_gets(char *st,int n);
 
 struct book{
