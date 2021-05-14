@@ -20,16 +20,16 @@ int main(void)
 	printf("Please enter the book title.\n");
 	printf("Press [ENTER] at the start of the line to stop.\n");
 
-	while(count<MAXBOOKS && s_gets(library[count].title,MAXTITLE)!=NULL
-		&& library[count].title[0]!='\0')
+	while(count<MAXBOOKS && s_gets(library[count].title,MAXTITLE)!=NULL	//s_gets checks if input attemps to read past EOF 
+		&& library[count].title[0]!='\0')	//s_gets checks whether the 1st char is null and terminates if true.
 	{
 		printf("\nEnter the author.\n");
 		s_gets(library[count].author,MAXAUTHOR);
 		printf("\nEnter the value.\n");
 		scanf("%f",&library[count++].value);
 
-		while(getchar()!='\n')
-			continue;
+		while(getchar()!='\n')	//clear input line for scanf() 
+			continue;	//this code compensates for the scanf() function ignoring spaces and newlines
 
 		if(count<MAXBOOKS)
 			printf("\nEnter the next title.\n");
@@ -57,11 +57,11 @@ char *s_gets(char *st,int n)
 
 	if(ret_val)
 	{
-		find=strchr(st,'\n');
+		find=strchr(st,'\n');	//look for newlife , if address not NULL place '\0'
 		if(find)
 			*find='\0';
 		else
-			while(getchar()!='\n')
+			while(getchar()!='\n')	//dispose bad input
 				continue;
 	}
 	return ret_val;
