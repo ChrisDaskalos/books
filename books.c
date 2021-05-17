@@ -57,7 +57,7 @@ char *s_gets(char *st,int n)
 
 	if(ret_val)
 	{
-		find=strchr(st,'\n');	//look for newlife , if address not NULL place '\0'
+		find=strchr(st,'\n');	//look for newline , if address not NULL place '\0'
 		if(find)
 			*find='\0';
 		else
